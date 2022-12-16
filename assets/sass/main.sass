@@ -1,0 +1,21 @@
+@use 'variables/colors'
+@use 'variables/font'
+@use 'variables/images'
+
+body
+    font-family: "Open Sans", sans-serif
+    background-size: contain
+    background-color: images.$img-background
+    color: colors.$lite-color
+    position: relative
+    background: transparent
+    &::before
+        content: ""
+        position: fixed
+        background: images.$img-background top right no-repeat
+        background-size: cover
+        left: 0
+        right: 0
+        top: 0
+        height: 100vh
+        z-index: -1

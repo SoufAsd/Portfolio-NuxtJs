@@ -1,0 +1,26 @@
+.background
+    animation: slide 3s ease-in-out infinite alternate
+    background-image: linear-gradient(-60deg, rgb(33, 47, 61) 40%, rgb(27, 36, 46) 40%)
+    bottom: 0
+    left: -50%
+    opacity: .35
+    position: fixed
+    right: -50%
+    top: 0
+    z-index: -1
+
+.first-layer
+    animation :
+        direction: alternate-reverse
+        duration: 4s
+
+.second-layer
+    animation :
+        duration: 5s
+
+@keyframes slide
+  0%
+    transform: translateX(-25%)
+  100%
+    transform: translateX(25%)
+    
