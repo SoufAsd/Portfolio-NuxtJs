@@ -6,6 +6,15 @@ export default defineNuxtConfig({
       viewport: "width=500, initial-scale=1",
       title: "Souf's Portfolio",
       meta: [{ name: "description", content: "Soufiane assaadi." }],
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+        },
+      ],
+      script:[
+        {src: "https://kit.fontawesome.com/a29c6a605e.js", crossorigin: "anonymous"},
+      ],
     },
   },
   modules: ["@pinia/nuxt"],
@@ -16,10 +25,13 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-        includePaths: ['./assets/sass'], },
+          includePaths: ["./assets/sass"],
+        },
       },
     },
   },
   typescript: { strict: true },
-  css: ['@/assets/sass/main.sass']
+  css: [
+    "@/assets/sass/main.sass",
+  ],
 });

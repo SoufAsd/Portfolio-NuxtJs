@@ -1,0 +1,47 @@
+@use 'variables/colors'
+@use 'variables/font'
+@use 'mixing/media'
+
+.navbar
+    padding: 0
+    margin-top: 35px
+    ul
+        margin: 0
+        padding: 0
+        display: flex
+        list-style: none
+        align-items: center
+    a
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 0
+        font-family: font.$font-family-poppins
+        font-size: 16px
+        font-weight: 400
+        color: colors.$lite-color
+        transition: 0.3s
+        &::before
+            content: ""
+            position: absolute
+            width: 0
+            height: 2px
+            bottom: -4px
+            left: 0
+            background-color: colors.$yellow-color
+            visibility: hidden
+            width: 0px
+            transition: all 0.3s ease-in-out 0s
+        &:hover:before
+            visibility: visible
+            width: 45px
+    li
+        position: relative
+        & + li
+            margin-left: 30px
+        &:hover
+            > a:before
+                visibility: visible
+                width: 45px
+    @include media.for-phone-only
+        display: none

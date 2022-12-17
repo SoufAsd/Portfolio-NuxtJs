@@ -19,3 +19,47 @@ body
         top: 0
         height: 100vh
         z-index: -1
+
+a
+    color: colors.$yellow-color
+    text-decoration: none
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+    font-family: var(--font-family)
+
+.header
+    transition: ease-in-out 0.3s
+    position: relative
+    height: 100vh
+    display: flex
+    align-items: center
+    z-index: 997
+    overflow-y: auto
+    h1
+        font-size: clamp(40px, 8vw, 70px)
+        margin: 0
+        padding: 0
+        line-height: 1
+        font-weight: 700
+        font-family: font.$font-family-poppins
+    h2
+        font-size: 44px
+        margin-top: 20px
+        color: colors.$lite-color
+        span
+            color: colors.$lite-color
+            border-bottom: 2px solid colors.$yellow-color
+            padding-bottom: 6px
+    h3
+        font-size: 16px
+        margin-top: 20px
+        color: colors.$lite-color
+    .container
+        padding: 0px 100px
+    *
+        transition: ease-in-out 0.3s
