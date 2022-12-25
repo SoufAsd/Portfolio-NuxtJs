@@ -30,7 +30,22 @@ h3,
 h4,
 h5,
 h6
-    font-family: var(--font-family)
+    font-family: font.$font-family-raleway
+
+section
+    overflow: hidden
+    position: absolute
+    width: 100%
+    top: 140px
+    bottom: 100%
+    opacity: 0
+    transition: ease-in-out 0.4s
+    z-index: 2
+    &.section-show
+        top: 10px
+        bottom: auto
+        opacity: 1
+        padding-bottom: 45px
 
 .header
     transition: ease-in-out 0.3s
@@ -63,3 +78,46 @@ h6
         padding: 0px 100px
     *
         transition: ease-in-out 0.3s
+
+.header-buttom
+    height: 80px
+    position: fixed
+    left: 50%
+    bottom: 0
+    background: colors.$background-color
+    padding: 0.1rem
+    display: grid
+    align-content: center
+    border-radius: 1.25rem 1.25rem 0 0
+    transition: .4s
+    transform: translate(-50%, 0%)
+    h1,h2,h3
+        display: none
+    .container
+        display: flex
+        align-items: center
+    .navbar
+        margin: 0
+.row
+    $bs-gutter-x: 1.5rem
+    $bs-gutter-y: 0
+    display: flex
+    flex-wrap: wrap
+    margin-top: calc(-1 * $bs-gutter-y)
+    margin-right: calc(-.5 * $bs-gutter-x)
+    margin-left: calc(-.5 * $bs-gutter-x)
+
+.col-lg-4
+    flex: 0 0 auto
+    width: 33.33333333%
+
+.col-lg-8
+    flex: 0 0 auto
+    width: 66.66666667%
+
+.col-lg-6
+    flex: 0 0 auto
+    width: 50%
+
+.pt-lg-0
+    padding-top: 0 !important

@@ -14,6 +14,7 @@ export default defineNuxtConfig({
       ],
       script:[
         {src: "https://kit.fontawesome.com/a29c6a605e.js", crossorigin: "anonymous"},
+        {src: "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js", crossorigin: "anonymous"},
       ],
     },
   },

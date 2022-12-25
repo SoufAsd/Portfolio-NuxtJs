@@ -1,0 +1,67 @@
+@use 'variables/colors'
+@use 'variables/font'
+@use 'variables/images'
+
+@import 'main'
+@import 'skills'
+
+.about-me
+    h3
+        font-weight: 700
+        font-size: 26px
+        color: colors.$yellow-color
+    ul
+        list-style: none
+        padding: 0
+        li
+            margin-bottom: 20px
+            display: flex
+            align-items: center
+        strong
+            margin-right: 10px
+        i
+            font-size: 16px
+            margin-right: 5px
+            color: colors.$yellow-color
+            line-height: 0
+
+    p
+        &:last-child
+            margin-bottom: 0
+    &.container
+        background: colors.$black-color
+        opacity: 0.7
+        padding: 30px
+        margin-right: 52px
+        margin-left: 58px
+
+.img-fluid
+    max-width: 100%
+    height: auto
+
+.section-title
+    h2
+        font-size: 14px
+        font-weight: 500
+        padding: 0
+        line-height: 1px
+        margin: 0 0 20px 0
+        letter-spacing: 2px
+        text-transform: uppercase
+        color: colors.$lite-color
+        font-family: font.$font-family-poppins
+        &::after
+            content: ""
+            width: 120px
+            height: 1px
+            display: inline-block
+            background: colors.$yellow-color
+            margin: 4px 10px
+    p
+        margin: 0
+        margin: -15px 0 15px 0
+        font-size: 36px
+        font-weight: 700
+        text-transform: uppercase
+        font-family: font.$font-family-poppins
+        color: colors.$lite-color

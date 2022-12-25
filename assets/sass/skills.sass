@@ -1,0 +1,37 @@
+@use 'variables/colors'
+@use 'variables/font'
+@use 'variables/images'
+@use 'variables/dimentions'
+
+.skills
+    .progress
+        height: 60px
+        display: block
+        background: none
+        border-radius: 0
+        padding-right: calc(dimentions.$bs-gutter-x * .5)
+        padding-left: calc(dimentions.$bs-gutter-x * .5)
+        .skill
+            padding: 10px 0
+            margin: 0
+            text-transform: uppercase
+            display: block
+            font-weight: 600
+            font-family: "Poppins", sans-serif
+            color: #fff
+            .val
+                float: right
+                font-style: normal
+    .progress-bar-wrap
+        background: rgba(255, 255, 255, 0.2)
+    .progress-bar
+        width: 1px
+        height: 10px
+        transition: 0.9s
+        background-color: colors.$yellow-color
+    &.container
+        background: colors.$black-color
+        opacity: 0.7
+        padding: 30px
+        margin-right: 52px
+        margin-left: 58px
