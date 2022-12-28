@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
   app: {
     head: {
       charset: "utf-16",
@@ -14,9 +15,10 @@ export default defineNuxtConfig({
       ],
       script:[
         {src: "https://kit.fontawesome.com/a29c6a605e.js", crossorigin: "anonymous"},
-        {src: "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js", crossorigin: "anonymous"},
       ],
     },
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
   },
   modules: ["@pinia/nuxt"],
   alias: {
@@ -31,7 +33,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  typescript: { strict: true },
+  typescript: { strict: true},
   css: [
     "@/assets/sass/main.sass",
   ],

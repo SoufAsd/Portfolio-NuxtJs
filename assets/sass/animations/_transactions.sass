@@ -1,0 +1,25 @@
+// page transition
+.page-enter-active
+    transition-property: opacity
+    transition-timing-function: ease-in-out
+    transition-duration: 500ms
+
+.page-leave-active
+    transition-property: opacity
+    transition-timing-function: ease-in-out
+    transition-duration: 500ms
+
+.page-enter-from,
+.page-leave-to
+    opacity: 0
+
+// layout transition
+.layout-enter-active
+    transition: all 0.1s ease-out
+
+.layout-leave-active
+    transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1)
+
+.layout-enter-from,
+.layout-leave-to
+    transform: translateY(-20px)

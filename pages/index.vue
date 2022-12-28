@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <Warpper>
         <BackGround />
         <header class="header">
             <div class="container">
@@ -10,10 +10,9 @@
             </div>
         </header>
         <NuxtLayout name="socials" />
-    </div>
+    </Warpper>
 </template>
 <script lang="ts">
-
 export default {
     data: () => ({
     }),
