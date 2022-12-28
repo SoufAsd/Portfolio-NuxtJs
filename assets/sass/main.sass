@@ -2,6 +2,8 @@
 @use 'variables/font'
 @use 'variables/images'
 
+@import 'animations/transactions'
+
 body
     font-family: "Open Sans", sans-serif
     background-size: contain
@@ -121,3 +123,30 @@ section
 
 .pt-lg-0
     padding-top: 0 !important
+
+.section-title
+    h2
+        font-size: 14px
+        font-weight: 500
+        padding: 0
+        line-height: 1px
+        margin: 0 0 20px 0
+        letter-spacing: 2px
+        text-transform: uppercase
+        color: colors.$white-color
+        font-family: font.$font-family-poppins
+        &::after
+            content: ""
+            width: 120px
+            height: 1px
+            display: inline-block
+            background: colors.$yellow-color
+            margin: 4px 10px
+    p
+        margin: 0
+        margin: -15px 0 15px 0
+        font-size: 36px
+        font-weight: 700
+        text-transform: uppercase
+        font-family: font.$font-family-poppins
+        color: colors.$white-color
