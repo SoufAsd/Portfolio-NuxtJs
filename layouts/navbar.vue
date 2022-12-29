@@ -29,7 +29,6 @@ export default {
     return {};
   },
   mounted() {
-    console.log("e")
     // this.checkRoute();
   },
   methods: {
