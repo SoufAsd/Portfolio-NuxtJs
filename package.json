@@ -23,9 +23,14 @@
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/style-resources": "^1.2.1",
     "@pinia/nuxt": "^0.4.6",
+    "gsap": "^3.11.4",
+    "pinia": "^2.0.28",
     "sass": "^1.56.2",
     "sass-loader": "^10.4.1",
     "three": "^0.148.0",
     "waypoints": "^4.0.1"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }
