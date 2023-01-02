@@ -49,14 +49,17 @@ export const useLaptop = defineStore("laptop", {
       this.Animation = Animation;
     },
     zoomIn(next: Function) {
-      let z = this.Model.position.z;
+      let z = this.Model.position.z,
+        width = window.innerWidth,
+        height = window.innerHeight;
       this.Previous = this.Clock.getElapsedTime();
+      this.Renderer.setSize(height+300,height+300);
       this.Zoom = !this.Zoom;
       this.Clock.elapsedTime = 0;
       this.Clock.stop();
       this.Model.rotation.z = 0;
-      this.animationZoom(1, 4, z, 20);
-      next();
+      this.animationZoom(1, 4, z, 23);
+      setTimeout(next,700)
     },
     zoomOut(next: Function) {
       this.Zoom = !this.Zoom;
@@ -68,7 +71,7 @@ export const useLaptop = defineStore("laptop", {
     },
     animationZoom(x: number, y: number, z: number, zoom: number) {
       let tl = gsap
-        .timeline({ defaults: { duration: 1.5, ease: "expo.out" } })
+        .timeline({ defaults: { duration: 2, ease: "expo.out" } })
         .to(this.Control.target, { x, y, z })
         .to(this.Camera.position, { x, y, z: z + zoom }, 0);
     },

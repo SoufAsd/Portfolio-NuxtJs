@@ -1,5 +1,5 @@
 <template lang="">
-  <canvas class="laptop" :style="{ opacity: ready ? 1 : 0 }" />
+  <canvas class="laptop" ref="laptop" :style="{ opacity: ready ? 1 : 0 }" />
 </template>
 <script>
 import { useLaptop } from "~/stores/laptop";
@@ -21,29 +21,6 @@ export default {
       clock: "",
       previous: this.laptopModal.Previous,
     };
-  },
-  methods: {
-    zoomIn() {
-      let x = this.laptop.position.x,
-        y = this.laptop.position.y,
-        z = this.laptop.position.z;
-      this.animationZoom(1, 4, z, 20);
-      cancelAnimationFrame(this.animation);
-      this.laptop.rotation.z = 0;
-      this.zoom = !this.zoom;
-    },
-    zoomOut() {
-      this.zoom = !this.zoom;
-      this.clock.start();
-      this.clock.elapsedTime = this.previous;
-      this.animationZoom(0, 0, 0, 70);
-    },
-    animationZoom(x, y, z, zoom) {
-      let tl = gsap
-        .timeline({ defaults: { duration: 1.5, ease: "expo.out" } })
-        .to(this.control.target, { x, y, z })
-        .to(this.camera.position, { x, y, z: z + zoom }, 0);
-    },
   },
   async mounted() {
     const THREE = await import("three").then((m) => m.default || m);

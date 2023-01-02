@@ -4,7 +4,7 @@
     <header class="header overflow-y-hidden">
       <div class="container">
         <AnimatedShape />
-        <div class="index relative">
+        <div class="index relative" :class="{ none: isZoomed }">
           <h3>Hi, my name is</h3>
           <h1><a href="index.html">Soufiane Assaadi</a></h1>
           <h2>I build things for the <span>web.</span></h2>
@@ -24,20 +24,17 @@ export default {
 
     return { laptopModal };
   },
-  data: () => ({}),
+  data: () => ({
+    isZoomed: false,
+  }),
   mounted() {},
   beforeRouteEnter(to, from, next) {
-    if (from.path != "/") {
-      const laptopModal = useLaptop();
-
-      laptopModal.zoomOut(next);
-    }else{
-      next();
-    }
-
+    next();
   },
   beforeRouteLeave(to, from, next) {
     this.laptopModal.zoomIn(next);
+    this.$el.querySelector(".laptop").classList.add("marginauto")
+    this.isZoomed = !this.isZoomed;
   },
 };
 </script>
