@@ -1,42 +1,26 @@
 <template lang="">
-  <canvas class="laptop" :style="{ opacity: ready ? 1 : 0 }" />
-  <button @click="zoom == false ? zoomIn() : zoomOut()">click me</button>
+  <canvas class="laptop" ref="laptop" :style="{ opacity: ready ? 1 : 0 }" />
 </template>
 <script>
+import { useLaptop } from "~/stores/laptop";
+
 export default {
+  setup() {
+    const laptopModal = useLaptop();
+
+    return { laptopModal };
+  },
   data() {
     return {
       ready: false,
-      zoom: false,
+      zoom: this.laptopModal.Zoom,
       camera: "",
       control: "",
       laptop: "",
       animation: "",
       clock: "",
-      previous: "",
+      previous: this.laptopModal.Previous,
     };
-  },
-  methods: {
-    zoomIn() {
-      let x = this.laptop.position.x,
-        y = this.laptop.position.y,
-        z = this.laptop.position.z;
-        this.laptop.rotation.z = 0
-      this.animationZoom(1, 4, z, 20);
-      this.zoom = !this.zoom;
-    },
-    zoomOut() {
-      this.zoom = !this.zoom;
-      this.clock.start();
-      this.clock.elapsedTime = this.previous;
-      this.animationZoom(0, 0, 0, 70);
-    },
-    animationZoom(x, y, z, zoom) {
-      let tl = gsap
-        .timeline({ defaults: { duration: 1.5, ease: "expo.out" } })
-        .to(this.control.target, { x, y, z })
-        .to(this.camera.position, { x, y, z: z + zoom }, 0);
-    },
   },
   async mounted() {
     const THREE = await import("three").then((m) => m.default || m);
@@ -70,6 +54,7 @@ export default {
       scene.add(laptop);
       this.ready = true;
       this.laptop = laptop;
+      this.laptopModal.setModel(laptop);
     });
 
     /*!
@@ -107,6 +92,7 @@ export default {
     scene.add(camera);
 
     this.camera = camera;
+    this.laptopModal.setCamera(camera);
 
     /*!
      * @control_setup
@@ -123,6 +109,7 @@ export default {
     controls.maxPolarAngle = Math.PI / 2;
 
     this.control = controls;
+    this.laptopModal.setControl(controls);
 
     /*!
      * @render_modal_on_canvas
@@ -138,23 +125,21 @@ export default {
     renderer.setSize(size.width, size.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
+    this.laptopModal.setRenderer(renderer);
+
     const clock = new THREE.Clock();
     let previousTime = 0;
 
     this.clock = clock;
+    this.laptopModal.setClock(clock);
 
     const tick = () => {
-      const elapsedTime = clock.getElapsedTime();
+      let elapsedTime = clock.getElapsedTime();
       const _deltaTime = elapsedTime - previousTime;
       previousTime = elapsedTime;
 
-      if (this.zoom == true) {
-        clock.stop();
-        this.previous = previousTime;
-      } else {
-        if (laptop) {
-          laptop.rotation.z = 0.4 * elapsedTime;
-        }
+      if (laptop) {
+        laptop.rotation.z = 0.4 * elapsedTime;
       }
 
       /*!
@@ -170,10 +155,11 @@ export default {
       /*!
        * @callback_of_tick_function_in_a_loop
        **/
-      this.animation = window.requestAnimationFrame(tick);
+      this.animation = requestAnimationFrame(tick);
     };
 
     tick();
+    // this.laptopModal.setAnimation(this.animation)
   },
 };
 </script>
