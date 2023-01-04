@@ -10,10 +10,12 @@
   "devDependencies": {
     "@nuxt/types": "^2.15.8",
     "@nuxtjs/google-fonts": "^2.0.0",
+    "@types/isotope-layout": "^3.0.9",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
     "eslint": "^8.29.0",
     "eslint-plugin-vue": "^9.8.0",
+    "mixitup": "^3.3.1",
     "nuxt": "3.0.0"
   },
   "dependencies": {
@@ -24,9 +26,11 @@
     "@nuxtjs/style-resources": "^1.2.1",
     "@pinia/nuxt": "^0.4.6",
     "gsap": "^3.11.4",
+    "isotope-layout": "^3.0.6",
     "pinia": "^2.0.28",
     "sass": "^1.56.2",
     "sass-loader": "^10.4.1",
+    "shufflejs": "^6.1.0",
     "three": "^0.148.0",
     "waypoints": "^4.0.1"
   },

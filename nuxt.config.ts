@@ -15,7 +15,7 @@ export default defineNuxtConfig({
       ],
       script:[
         {src: "https://kit.fontawesome.com/a29c6a605e.js", crossorigin: "anonymous"},
-        {src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js", crossorigin: "anonymous"},
+        {src: "https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js", crossorigin: "anonymous"},
       ],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -25,6 +25,9 @@ export default defineNuxtConfig({
   // alias: {
   //   pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs",
   // },
+  // plugins: [
+  //   { src: '~/plugins/mixitup.js', mode: 'client' }
+  // ],
   vite: {
     css: {
       preprocessorOptions: {
