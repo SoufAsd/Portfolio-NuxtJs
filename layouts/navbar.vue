@@ -13,7 +13,9 @@
       <li>
         <NuxtLink class="nav-link" to="/portfolio">Portfolio</NuxtLink>
       </li>
-      <li><a href="#contact">Contact</a></li>
+      <li>
+        <NuxtLink class="nav-link" to="/contact">Contact</NuxtLink>
+      </li>
     </ul>
   </nav>
 </template>
