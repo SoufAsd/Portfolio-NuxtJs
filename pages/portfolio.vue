@@ -13,30 +13,36 @@
         </div>
         <PortfolioNavigator :isotope="isotope"></PortfolioNavigator>
         <div class="row portfolio-container">
-            <PortfolioProject :filter="`filter-backend`"></PortfolioProject>
-            <PortfolioProject :filter="`filter-frontend`"></PortfolioProject>
+          <PortfolioProject :filter="`filter-backend`"></PortfolioProject>
+          <PortfolioProject :filter="`filter-frontend`"></PortfolioProject>
         </div>
       </div>
     </section>
   </Warpper>
 </template>
-<script>
+<script lang="js">
+
 export default {
-  data(){
+  data() {
     return {
-      isotope : {}
+      isotope: {}
     }
   },
-  mounted(){
+  async mounted() {
     let list = this.$el.querySelector(".portfolio-container"),
-      portfolioIsotope = new Isotope(list, {
-        itemSelector: ".portfolio-item",
-        layoutMode: "fitRows",
+      mixitup = await import("mixitup").then((m) => m.default || m),
+      mixer = mixitup(list, {
+        selectors: {
+          target: '.portfolio-item'
+        },
+        animation: {
+          duration: 300
+        }
       });
-      this.isotope = portfolioIsotope;
+    this.isotope = mixer;
   }
 };
 </script>
 <style lang="scss">
-@import '@/assets/sass/portfolio.sass';
+@import "@/assets/sass/portfolio.sass";
 </style>

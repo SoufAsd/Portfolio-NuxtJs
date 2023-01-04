@@ -25,6 +25,9 @@ export default defineNuxtConfig({
   // alias: {
   //   pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs",
   // },
+  // plugins: [
+  //   { src: '~/plugins/mixitup.js', mode: 'client' }
+  // ],
   vite: {
     css: {
       preprocessorOptions: {
