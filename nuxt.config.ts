@@ -30,12 +30,6 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
   modules: ["@pinia/nuxt"],
-  // alias: {
-  //   pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs",
-  // },
-  // plugins: [
-  //   { src: '~/plugins/mixitup.js', mode: 'client' }
-  // ],
   vite: {
     css: {
       preprocessorOptions: {
