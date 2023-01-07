@@ -13,8 +13,7 @@
         </div>
         <PortfolioNavigator :isotope="isotope"></PortfolioNavigator>
         <div class="row portfolio-container">
-          <PortfolioProject :filter="`filter-backend`"></PortfolioProject>
-          <PortfolioProject :filter="`filter-frontend`"></PortfolioProject>
+            <PortfolioProject v-for="project in projects.result" :filter="project.field" :project="project"></PortfolioProject>
         </div>
       </div>
     </section>
@@ -23,9 +22,15 @@
 <script lang="js">
 
 export default {
+  async setup(){
+    const works = ref();
+    const { data : projects, pending, error, refresh } = await useFetch('/api/query?col=Projects');
+
+    return {projects};
+  },
   data() {
     return {
-      isotope: {}
+      isotope: {},
     }
   },
   async mounted() {

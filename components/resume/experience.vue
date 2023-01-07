@@ -1,27 +1,23 @@
 <template lang="">
-  <div class="resume-item">
-    <h4>Soon</h4>
-    <h5>2021 - Present</h5>
-    <p><em>Soon</em></p>
-    <ul>
-      <li>
-        Soon
-      </li>
-      <li>
-        Soon
-      </li>
-      <li>
-        Soon
-      </li>
-      <li>
-        Soon
-      </li>
+  <div v-for="experience in Experiences.result" class="resume-item">
+    <h4>{{experience.title}}</h4>
+    <h5>{{experience.period}}</h5>
+    <p><em>{{experience.location}}</em></p>
+    <ul v-for="mission in experience.missions">
+      <li>{{mission}}</li>
     </ul>
   </div>
 </template>
-<script lang="ts">
-export default {};
+<script lang="ts" setup>
+const Experiences = ref();
+const {
+  data: experience,
+  pending,
+  error,
+  refresh,
+} = await useFetch("/api/query?col=Experience");
+Experiences.value = experience.value;
 </script>
 <style lang="scss" scoped>
-@import '@/assets/sass/resume.sass'
+@import "@/assets/sass/resume.sass";
 </style>

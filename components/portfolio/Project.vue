@@ -2,18 +2,15 @@
   <div class="col-lg-4 col-md-6 portfolio-item" :class="filter">
     <div class="portfolio-wrap">
       <img
-        src="@/assets/img/portfolio/genshin-helper.png"
+        :src="project.image"
         class="img-fluid"
         alt=""
       />
       <div class="portfolio-info">
-        <h4>App 1</h4>
+        <h4>{{project.title}}</h4>
         <div class="display-block">
-          <PortfolioProgrammingLang
-            :program="`nuxtjs`"
-          ></PortfolioProgrammingLang>
-          <PortfolioProgrammingLang
-            :program="`expressjs`"
+          <PortfolioProgrammingLang v-for="techno in project.technologies"
+            :program="techno"
           ></PortfolioProgrammingLang>
         </div>
       </div>
@@ -23,7 +20,8 @@
 <script lang="ts">
 export default {
   props:{
-    filter : String
+    filter : String,
+    project : Object,
   }
 };
 </script>
