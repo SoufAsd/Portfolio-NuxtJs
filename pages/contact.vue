@@ -9,10 +9,10 @@
       <div class="container">
         <SectionTitle :pageTitle="`Contact`" :Subtittle="`Contact Me`"></SectionTitle>
         <div class="row mt-2">
-            <ContactAddress></ContactAddress>
-            <ContactSocial></ContactSocial>
-            <ContactEmail></ContactEmail>
-            <ContactPhone></ContactPhone>
+            <ContactAddress :address="Contact.result[0].address"></ContactAddress>
+            <ContactSocial :social="Contact.result[0]"></ContactSocial>
+            <ContactEmail :email="Contact.result[0].email"></ContactEmail>
+            <ContactPhone :phone="Contact.result[0].phone"></ContactPhone>
         </div>
         <ContactForm></ContactForm>
       </div>
@@ -20,7 +20,18 @@
   </Warpper>
 </template>
 <script lang="ts">
-export default {};
+export default {
+  async setup() {
+    const {
+      data: Contact,
+      pending,
+      error,
+      refresh,
+    } = await useFetch("/api/query?col=Contact");
+
+    return { Contact };
+  },
+};
 </script>
 <style lang="scss">
 @import "@/assets/sass/contact.sass"
