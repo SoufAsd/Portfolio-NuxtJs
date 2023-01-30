@@ -3,11 +3,11 @@
     <div class="info-box">
       <i class='bx bxs-envelope'></i>
       <h3>Email Me</h3>
-      <p>Soon</p>
+      <p>{{props.email}}</p>
     </div>
   </div>
 </template>
-<script lang="ts">
-export default {};
+<script lang="ts" setup>
+const props = defineProps(['email'])
 </script>
 <style lang=""></style>

@@ -3,14 +3,12 @@
     <div class="info-box">
       <i class='bx bxs-map'></i>
       <h3>My Address</h3>
-      <p>Soon</p>
+      <p>{{props.address}}</p>
     </div>
   </div>
 </template>
-<script lang="ts">
-export default {
-    
-}
+<script lang="ts" setup>
+const props = defineProps(['address'])
 </script>
 <style lang="">
     
