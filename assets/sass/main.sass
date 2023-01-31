@@ -1,6 +1,7 @@
 @use 'variables/colors'
 @use 'variables/font'
 @use 'variables/images'
+@use 'mixing/media'
 
 @import 'animations/transactions'
 
@@ -48,6 +49,8 @@ section
         bottom: auto
         opacity: 1
         padding-bottom: 45px
+        @include media.for-phone-only
+            top: 30px
     .container
         background: colors.$black-color
         opacity: 0.9
@@ -106,6 +109,8 @@ section
         align-items: center
     .navbar
         margin: 0
+    @include media.for-phone-only
+        display: none
 .row
     $bs-gutter-x: 1.5rem
     $bs-gutter-y: 0
@@ -115,17 +120,9 @@ section
     margin-right: calc(-.5 * $bs-gutter-x)
     margin-left: calc(-.5 * $bs-gutter-x)
 
-.col-lg-4
-    flex: 0 0 auto
-    width: 33.33333333%
-
-.col-lg-8
-    flex: 0 0 auto
-    width: 66.66666667%
-
-.col-lg-6
-    flex: 0 0 auto
-    width: 50%
+.padding-mobile
+    @include media.for-phone-only
+        top: 30px
 
 .pt-lg-0
     padding-top: 0 !important

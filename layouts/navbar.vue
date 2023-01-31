@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar" ref="navbar">
     <ul>
       <li>
         <NuxtLink class="nav-link" to="/">Home</NuxtLink>

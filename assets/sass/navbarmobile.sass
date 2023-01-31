@@ -1,0 +1,124 @@
+@use 'variables/colors'
+@use 'mixing/media'
+
+.menu
+	-webkit-tap-highlight-color: transparent
+	background: colors.$lite-color
+	border-radius: 50%
+	box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.2)
+	height: 172px
+	display: none
+	left: -106px
+	position: absolute
+	top: -107px
+	width: 203px
+	@include media.for-phone-only
+		display: flex
+
+.hamburger
+	cursor: pointer
+	height: 47px
+	left: 60%
+	position: relative
+	top: 64%
+	width: 35px
+	path
+		transition: transform 300ms
+		&:nth-child(1)
+			transform-origin: 25% 29%
+		&:nth-child(2)
+			transform-origin: 50% 50%
+		&:nth-child(3)
+			transform-origin: 75% 72%
+		&:nth-child(4)
+			transform-origin: 75% 29%
+		&:nth-child(5)
+			transform-origin: 25% 72%
+
+.active
+	.hamburger
+		path
+			&:nth-child(1)
+				transform: rotate(45deg)
+			&:nth-child(2)
+				transform: scaleX(0)
+			&:nth-child(3)
+				transform: rotate(45deg)
+			&:nth-child(4)
+				transform: rotate(-45deg)
+			&:nth-child(5)
+				transform: rotate(-45deg)
+
+.pie
+	-webkit-tap-highlight-color: transparent
+	background: colors.$lite-color
+	border-radius: 50%
+	box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.2)
+	cursor: pointer
+	height: 400px
+	left: -237px
+	position: absolute
+	top: -265px
+	width: 400px
+	transform: translateX(-200px) translateY(-200px)
+	transition: transform 300ms
+	&:active
+		opacity: 0.5
+	.pie-color
+		width: 100%
+		height: 100%
+		border-radius: 50%
+	&.pie-shape-buttom
+		clip-path: polygon(200px 200px, 320px 450px, 0 450px)
+		transition-delay: 30ms
+	&.pie-shape-middle-top
+		clip-path: polygon(200px 200px, 344px 350px, 450px 344px)
+		transition-delay: 90ms
+	&.pie-shape-middle-buttom
+		clip-path: polygon(200px 200px, 344px 500px, 338px 344px)
+		transition-delay: 60ms
+	&.pie-shape-top
+		clip-path: polygon(200px 200px, 450px 0, 450px 344px)
+		transition-delay: 120ms
+	span
+		font-size: 10px
+
+.active
+	.pie
+		transform: translateX(0) translateY(0)
+
+.portfolio-mobile
+	left: 245px
+	position: absolute
+	top: 346px
+	width: 71px
+	color: colors.$black-color
+	transform: rotate(-20deg)
+
+.about-mobile
+	left: 289px
+	position: absolute
+	top: 321px
+	width: 66px
+	color: colors.$black-color
+	transform: rotate(-30deg)
+
+.resume-mobile
+	left: 327px
+	position: absolute
+	top: 278px
+	width: 66px
+	color: colors.$black-color
+	transform: rotate(-50deg)
+
+.contact-mobile
+	left: 356px
+	position: absolute
+	top: 257px
+	width: 66px
+	color: colors.$black-color
+	transform: rotate(-20deg)
+
+.top-menu-mobile
+	position: absolute
+	z-index: 999

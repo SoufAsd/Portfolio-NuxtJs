@@ -1,11 +1,12 @@
 <template lang="">
   <Warpper>
+    <NuxtLayout name="navbarmobile" />
     <header class="header header-buttom">
       <div class="container">
         <NuxtLayout name="navbar" />
       </div>
     </header>
-    <section id="resume" class="resume section-show">
+    <section id="resume" class="resume section-show padding-mobile">
       <div class="container">
         <div class="section-title">
           <h2>Resume</h2>
