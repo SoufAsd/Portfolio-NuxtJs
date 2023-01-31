@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="col-lg-6 mt-4 mt-md-0 d-flex align-items-stretch">
+  <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
     <div class="info-box">
       <i class='bx bxs-share-alt'></i>
       <h3>Social Profiles</h3>

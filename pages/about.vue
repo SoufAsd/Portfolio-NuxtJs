@@ -1,11 +1,12 @@
 <template>
   <Warpper>
+    <NuxtLayout name="navbarmobile" />
     <header class="header header-buttom">
       <div class="container">
         <NuxtLayout name="navbar" />
       </div>
     </header>
-    <section id="about" class="about section-show">
+    <section id="about" class="about section-show padding-mobile">
       <AboutMe :about="about"></AboutMe>
       <!-- ======= Skills  ======= -->
       <div class="skills container">
@@ -132,6 +133,7 @@
         </div>
       </div>
     </section>
+    
   </Warpper>
 </template>
 <style lang="scss">

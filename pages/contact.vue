@@ -1,11 +1,12 @@
 <template lang="">
   <Warpper>
+    <NuxtLayout name="navbarmobile" />
     <header class="header header-buttom">
       <div class="container">
         <NuxtLayout name="navbar" />
       </div>
     </header>
-    <section id="contact" class="contact section-show">
+    <section id="contact" class="contact section-show padding-mobile">
       <div class="container">
         <SectionTitle :pageTitle="`Contact`" :Subtittle="`Contact Me`"></SectionTitle>
         <div class="row mt-2">
