@@ -10,6 +10,6 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
   <p align="center">
-    An awesome Portfolio using NuxtJs , Firebase and Threejs
+    An awesome Portfolio using `NuxtJs` , `Firebase` and `Threejs`
   </p>
 </div>
